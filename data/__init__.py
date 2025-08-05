@@ -105,3 +105,7 @@ class CustomDatasetDataLoader:
         """Set epoch for DistributedSampler to ensure proper shuffling"""
         if self.sampler is not None:
             self.sampler.set_epoch(epoch)
+        if hasattr(self.dataset, "set_epoch"):
+            self.dataset.set_epoch(epoch)
+        else:
+         print("dataset has no attribution name set_epoch")
