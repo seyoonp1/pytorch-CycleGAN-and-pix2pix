@@ -31,6 +31,7 @@ class UnalignedDataset(BaseDataset):
 
     def set_epoch(self, epoch):
         """epoch마다 A 도메인을 새롭게 샘플링"""
+        print("get random 1000 sample")
         self.sample_A_paths()
 
     def __getitem__(self, index):
